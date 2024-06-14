@@ -1,0 +1,207 @@
+%-------------------------
+% Resume in Latex
+% Author : Vedant Arya
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+\usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\setlength{\footskip}{4.08003pt}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{center}
+    \Huge \scshape Vedant Arya \\ \vspace{1pt}
+    \small %% xxx-xxx-xxxx $|$ Uncomment this to include your phone number
+    \href{mailto:vedant.arya.0x80@proton.me}{\underline{vedant.arya.0x80@proton.me}} $|$ 
+    \href{https://linkedin.com/in/vavava0x80}{\underline{linkedin.com/in/vavava0x80}} $|$
+    \href{https://github.com/martian0x80}{\underline{github.com/martian0x80}}
+\end{center}
+
+
+%
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C/C++, C\#/.NET, Shell Scripting (bash/zsh)} \\
+     \textbf{Frameworks}{: ASP.NET Core, Entity Framework Core, Dapper, Flask, SQLAlchemy Core, Django Rest Framework, AvaloniaUI, OpenTelemetry} \\
+     \textbf{Developer Tools}{: Git, Jetbrains, SQL (Postgres, MySQL), NoSQL (Redis), Docker, Traefik, Prometheus, Grafana} \\
+     \textbf{Cloud}{: Azure Web Apps, Azure VM, AWS EC2}
+    }}
+ \end{itemize}
+%----------------------------------------
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      
+      \resumeProjectHeading
+          {\textbf{IPUSenpai} $|$ \emph{ASP.NET, Python, ETL, Docker, Postgresql, Redis, Prometheus} $|$ \href{https://github.com/martian0x80/IPUSenpaiBackend}{\color{blue}\underline{Github}} $|$ \href{https://devel.ipusenpai.in}{\color{blue}\underline{ipusenpai.in}}}{March 2024 -- Present}
+          \resumeItemListStart
+            \resumeItem{Developed a data analytics app to provide a statistical dashboard and ranklist from results published by IPU.}
+            \resumeItem{Results published by IPU were in an obscure format and challenging to parse and analyze, lacking significant statistical data.}
+            \resumeItem{As a result:
+              \begin{itemize}
+                \item Built a robust multiprocessing parser using complex regex patterns. Designed and implemented a scalable ETL pipeline using Python (SQLAlchemy) for automated data parsing, transformation, and loading of data into a remote PostgreSQL DB (Azure).
+                \item Constructed a high-performance REST API with ASP.NET Core and Entity Framework Core, later migrating to Dapper for further performance gains.
+                \item Carefully crafted a beautiful UI interface with Next.js, TypeScript, and Tailwind CSS.
+                \item Implemented a CI/CD pipeline using Docker, DockerHub Registry, and GitHub Actions for automated Web API deployments.
+              \end{itemize}
+            }
+            \resumeItem{Gained \textbf{2.2K+} users and \textbf{12K+} views within the first week of launch.}
+            % \resumeItem{Implemented a CI/CD pipeline using Docker, DockerHub Registry, and GitHub Actions for automated Web API deployments.}
+            \resumeItem{Utilized Traefik for reverse proxy and load balancing. Used OpenTelemetry, Prometheus and Grafana stack for monitoring and observability.}
+          \resumeItemListEnd
+      
+      \resumeProjectHeading
+          {\textbf{Dotnotes} $|$ \emph{Flask, Python, DriveV3 API, Shell scripting, Spider, Git} $|$ \href{https://www.dotnotes.xyz/}{\color{blue}\underline{dotnotes.xyz}}}{October 2023 -- Present}
+          \resumeItemListStart
+            \resumeItem{Conceptualized and implemented Dotnotes, a platform for seamless sharing of B.Tech course materials.}
+            \resumeItem{Need for an efficient way to share and access course materials.}
+            \resumeItem{Developed a backend API in Flask, deployed on Azure, and integrated Redis for caching.}
+            \resumeItem{Achieved \textbf{150K+} pageviews and \textbf{7.5K+} users within the first 90 days.}
+            \resumeItem{Led a team to build, improve, and scale the platform.}
+          \resumeItemListEnd
+
+        \resumeProjectHeading
+          {\textbf{PureAES} $|$ \emph{C, FIPS-197} $|$ \href{https://github.com/martian0x80/PureAES}{\color{blue}\underline{Github}}}{March 2023 -- April 2023}
+          \resumeItemListStart
+            \resumeItem{Implemented the Advanced Encryption Standard (AES) symmetric key block cipher in pure C.}
+            \resumeItem{Need for a minimal AES implementation without external dependencies.}
+            \resumeItem{Developed based on FIPS-197, supporting 128, 192, and 256-bit key sizes.}
+            \resumeItem{Successfully tested against NIST test vectors, ensuring compliance and reliability.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {GGSIPU University $|$ \emph{$8.68$ CGPA}}{Delhi, India}
+      {Bachelor of Technology in Computer Science}{Nov. 2022 -- Nov. 2026}
+  \resumeSubHeadingListEnd
+
+
+%-----------ACCOMPLISHMENTS-----------
+\section{Accomplishments}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+            {Google Solution Challenge 2024 - Global Top 100 Finalist}{December 2023}
+            {Google Developer Student Clubs - Google $|$ \href{https://developers.google.com/community/gdsc-solution-challenge/winners}{\color{blue}\underline{Winners}} $|$ \href{https://drive.google.com/file/d/1ZjR0Lc5kgL_BWWEfPina2izSWEeD0eaM/view?usp=sharing}{\color{blue}\underline{Certificate}}}{}
+            \resumeItemListStart
+                \resumeItem{Developed a platform that connects individuals seeking short-term, informal jobs (e.g., gardening, moving assistance) with local opportunities}
+                \resumeItem{Developed a backend API with Django Rest Framework along with JWT (JSON Web Token) authentication}
+                \resumeItem{Prepared a CRUD API endpoint to create new jobs from the frontend}
+            \resumeItemListEnd
+
+        \resumeSubheading
+            {Prize Pool Category - 2nd Place}{March 2023}
+            {Live The Code: 2.0 $|$ \href{https://verification.givemycertificate.com/v/e39f804d-d1d3-4bcc-acaf-4d0ce8873540}{\color{blue}\underline{Verify}}}{}
+            \resumeItemListStart
+                \resumeItem{Built a health chatbot solution "Medimate" using open source LLaMa models}
+                \resumeItem{Implemented a backend API with Flask to fetch LLM's responses}
+                \resumeItem{Used IPT (Instruction Prompt Tuning) to guide LLM responses}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+% \section{Interests}
+    
+
+%-------------------------------------------
+\end{document}

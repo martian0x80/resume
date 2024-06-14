@@ -1,0 +1,29 @@
+name: Build LaTeX and deploy on GH Releases
+on:
+  push:
+jobs:
+  Build-LaTeX:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fetch tags
+        shell: bash
+        run: git fetch --tags -f
+      - name: Compile LaTeX
+        uses: DanySK/compile-latex-action@master
+      - name: Autotag
+        uses: DanySK/semver-autotag-action@master
+      - name: Deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG=$(git describe --tags --exact-match HEAD)
+          hub release create -m "$(git tag -l --format='%(contents)' "$TAG")" "$TAG" || true
+          for file in $LATEX_SUCCESSES; do
+            pdf="${file%.*}.pdf"
+            echo "Delivering file $pdf"
+            gh release upload "$TAG" "$pdf" --clobber
+          done
